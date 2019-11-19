@@ -40,13 +40,13 @@ resource "aws_eip" "this_instance_ip" {
   vpc      = true
 }
 
-module "ami" {
-  source = "../ami"
-}
+# module "ami" {
+#  source = "../ami"
+#}
 
 resource "aws_instance" "this_instance" {
   key_name                    = var.ssh_key_name
-  ami                         = module.ami.amazon-linux
+  ami                         = amazon-linux
   instance_type               = var.instance_type
   associate_public_ip_address = true
   iam_instance_profile        = module.instance_profile_bastion.role_name
