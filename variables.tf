@@ -35,7 +35,17 @@ variable "subnet_id" {
   description = "Bastion Subnet"
 }
 
-variable "security_group_id" {
-  description = "Security Group"
-}
+# variable "security_group_id" {
+#   description = "Security Group"
+# }
 
+variable "vpc_id" {
+  description = "VPC ID to security group"
+}
+variable "allowed_cidr_blocks" {
+  type = list(object({
+    rule        = string
+    cidr_blocks = string
+    description = string
+  }))
+}
