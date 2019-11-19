@@ -1,5 +1,6 @@
 module "instance_profile_bastion" {
-  source = "../instance_profile"
+  source  = "linux-place/instanceprofile/aws"
+  version = "0.1.0"
   name   = var.bastion_profile_name
   policies = concat(
     [
